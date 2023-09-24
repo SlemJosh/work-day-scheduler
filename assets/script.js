@@ -17,7 +17,8 @@ $(function () {
 
 
   // We want to display the current date and time.  Our header has a class already tied to it, so we will just use that here in the function to pull the data from the users pc and display it on the screen.
-
+  // Initially I found documentation that went through and got me a big string to respresent todays date and current time. I then had to use some additional coding to get that string into information that could be read out on the page.
+  // After I went back and check the example, I found that it would be better to use something simpler to display just the time and date. No need for the all the information the other method was giving us.
   let time = Date.now()
   console.log(time);
 
@@ -26,9 +27,6 @@ $(function () {
   let currentDate = date.toString();
   console.log(currentDate);
   document.getElementById("currentDay").innerHTML = currentDate;
-
-  //let today = dayjs().format("ddd, MM/DD/YYYY");
-  //document.getElementById("currentDay").innerHTML = today;
 
 // https://www.freecodecamp.org/news/javascript-date-time-dayjs/#:~:text=const%20currentDate%20%3D%20dayjs()%3B,That's%20it!
 
