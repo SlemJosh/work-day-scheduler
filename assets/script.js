@@ -2,7 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-  // Adding a listener for clicking the button on each line. It should save to a functino called saveTasks
+  // Adding a listener for clicking the button on each line. It should save to a function called saveTasks
   $(".btn").click(saveTasks);
 
   // Added the function saveTasks so that we can take what information is given and store it in the local storage.  Users can refresh or even leave the page and the info will stay there until cleared/we set a timer to auto delete it.
@@ -24,6 +24,7 @@ $(".container-fluid").children("div").each(timeColor);
 
 function timeColor(){
   let currentHour = dayjs().format("H");
+  console.log(currentHour)
   // If the current time is later than our listed times...
   for (i = 9; i <= 17; i++){
     if (i < currentHour) {
