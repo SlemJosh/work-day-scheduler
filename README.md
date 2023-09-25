@@ -18,8 +18,8 @@ presented on the page, so that I could demonstrate and fully test the features.
 Deployed at https://slemjosh.github.io/work-day-scheduler/
 
 ## Usage
-![work day scheduler during work hours screenshot]()
-![work day scheduler after hours screenshot](/work-day-scheduler/assets/afterhoursscreenshot.png)
+![work day scheduler during work hours screenshot](assets/workhoursscreenshot.png)
+![work day scheduler after hours screenshot](assets/afterhoursscreenshot.png)
 
 
 ## Credits
