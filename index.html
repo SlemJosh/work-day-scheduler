@@ -1,175 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
-  <!-- Header-->
-  <body>
-    <header class="p-5 mb-4 border-5 border-bottom border-dark text-center">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-      <!-- We want to associate some information with the id provided to us with CurrentDay. We will add a script to track the current date and time for it to display-->
-    </header>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <title>Work Day Scheduler</title>
+</head>
+
+<!-- Header-->
+<body>
+  <header class="p-5 mb-4 border-5 border-bottom border-dark text-center">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+    <!-- We want to associate some information with the id provided to us with CurrentDay. We will add a script to track the current date and time for it to display-->
+  </header>
 
   <!--Main Body-->
-    <!--This is the main container that will hold all our time options-->
-    <div class="container-lg px-5">
-  
-      <!--9AM-->
-        <div id="hour-9" class="row time-block">
-          <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
-          <textarea id="hour9text" class="col-8 col-md-10 description" rows="3">
-          </textarea>
-          <button
-            id="hour9Save"
-            class="btn saveBtn col-2 col-md-1"
-            aria-label="save"
-          >
-            <i class="fas fa-save" aria-hidden="true"></i>
-          </button>
-        </div> 
+  <!--This is the main container that will hold all our time options-->
+  <div class="container-lg px-5">
 
-        <!--10AM--> 
-        <div id="hour-10" class="row time-block">
-          <div class="col-2 col-md-1 hour text-center py-3">10AM</div>
-          <textarea id="hour10text" class="col-8 col-md-10 description" rows="3">
+    <!--9AM-->
+    <div id="hour-9" class="row time-block">
+      <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
+      <textarea id="hour9text" class="col-8 col-md-10 description" rows="3">
           </textarea>
-          <button
-            id="hour10Save"
-            class="btn saveBtn col-2 col-md-1"
-            aria-label="save"
-          >
-            <i class="fas fa-save" aria-hidden="true"></i>
-          </button>
-        </div>
+      <button id="hour9Save" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <i class="fas fa-save" aria-hidden="true"></i>
+      </button>
+    </div>
 
-        <!--11AM-->  
-        <div id="hour-11" class="row time-block">
-          <div class="col-2 col-md-1 hour text-center py-3">11AM</div>
-          <textarea id="hour11text" class="col-8 col-md-10 description" rows="3">
+    <!--10AM-->
+    <div id="hour-10" class="row time-block">
+      <div class="col-2 col-md-1 hour text-center py-3">10AM</div>
+      <textarea id="hour10text" class="col-8 col-md-10 description" rows="3">
           </textarea>
-          <button
-            id="hour11Save"
-            class="btn saveBtn col-2 col-md-1"
-            aria-label="save"
-          >
-            <i class="fas fa-save" aria-hidden="true"></i>
-          </button>
-        </div> 
+      <button id="hour10Save" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <i class="fas fa-save" aria-hidden="true"></i>
+      </button>
+    </div>
 
-        <!--12AM--> 
-        <div id="hour-12" class="row time-block">
-          <div class="col-2 col-md-1 hour text-center py-3">12AM</div>
-          <textarea id="hour12text" class="col-8 col-md-10 description" rows="3">
+    <!--11AM-->
+    <div id="hour-11" class="row time-block">
+      <div class="col-2 col-md-1 hour text-center py-3">11AM</div>
+      <textarea id="hour11text" class="col-8 col-md-10 description" rows="3">
           </textarea>
-          <button
-            id="hour12Save"
-            class="btn saveBtn col-2 col-md-1"
-            aria-label="save"
-          >
-            <i class="fas fa-save" aria-hidden="true"></i>
-          </button>
-        </div>
+      <button id="hour11Save" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <i class="fas fa-save" aria-hidden="true"></i>
+      </button>
+    </div>
 
-        <!--1PM--> 
-        <!--Since we are going to be using simple math functions, we have decided that while the time wil be displayed in a 12 hour clock, we are basically taking military time.  So the values 9 thru 17 represent that 9am to 5pm block-->
-        <div id="hour-13" class="row time-block">
-          <div class="col-2 col-md-1 hour text-center py-3">1PM</div>
-          <textarea id="hour13text" class="col-8 col-md-10 description" rows="3">
+    <!--12AM-->
+    <div id="hour-12" class="row time-block">
+      <div class="col-2 col-md-1 hour text-center py-3">12AM</div>
+      <textarea id="hour12text" class="col-8 col-md-10 description" rows="3">
           </textarea>
-          <button
-            id="hour13Save"
-            class="btn saveBtn col-2 col-md-1"
-            aria-label="save"
-          >
-            <i class="fas fa-save" aria-hidden="true"></i>
-          </button>
-        </div>
+      <button id="hour12Save" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <i class="fas fa-save" aria-hidden="true"></i>
+      </button>
+    </div>
 
-        <!--2PM-->
-        <div id="hour-14" class="row time-block">
-          <div class="col-2 col-md-1 hour text-center py-3">2PM</div>
-          <textarea id="hour14text" class="col-8 col-md-10 description" rows="3">
+    <!--1PM-->
+    <!--Since we are going to be using simple math functions, we have decided that while the time wil be displayed in a 12 hour clock, we are basically taking military time.  So the values 9 thru 17 represent that 9am to 5pm block-->
+    <div id="hour-13" class="row time-block">
+      <div class="col-2 col-md-1 hour text-center py-3">1PM</div>
+      <textarea id="hour13text" class="col-8 col-md-10 description" rows="3">
           </textarea>
-          <button
-            id="hour14Save"
-            class="btn saveBtn col-2 col-md-1"
-            aria-label="save"
-          >
-            <i class="fas fa-save" aria-hidden="true"></i>
-          </button>
-        </div>
+      <button id="hour13Save" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <i class="fas fa-save" aria-hidden="true"></i>
+      </button>
+    </div>
 
-        <!--3PM--> 
-        <div id="hour-15" class="row time-block">
-          <div class="col-2 col-md-1 hour text-center py-3">3PM</div>
-          <textarea id="hour15text" class="col-8 col-md-10 description" rows="3">
+    <!--2PM-->
+    <div id="hour-14" class="row time-block">
+      <div class="col-2 col-md-1 hour text-center py-3">2PM</div>
+      <textarea id="hour14text" class="col-8 col-md-10 description" rows="3">
           </textarea>
-          <button
-            id="hour15Save"
-            class="btn saveBtn col-2 col-md-1"
-            aria-label="save"
-          >
-            <i class="fas fa-save" aria-hidden="true"></i>
-          </button>
-        </div>
+      <button id="hour14Save" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <i class="fas fa-save" aria-hidden="true"></i>
+      </button>
+    </div>
 
-        <!--4PM-->  
-        <div id="hour-16" class="row time-block">
-          <div class="col-2 col-md-1 hour text-center py-3">4PM</div>
-          <textarea id="hour16text" class="col-8 col-md-10 description" rows="3">
+    <!--3PM-->
+    <div id="hour-15" class="row time-block">
+      <div class="col-2 col-md-1 hour text-center py-3">3PM</div>
+      <textarea id="hour15text" class="col-8 col-md-10 description" rows="3">
           </textarea>
-          <button
-            id="hour16Save"
-            class="btn saveBtn col-2 col-md-1"
-            aria-label="save"
-          >
-            <i class="fas fa-save" aria-hidden="true"></i>
-          </button>
-        </div> 
+      <button id="hour15Save" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <i class="fas fa-save" aria-hidden="true"></i>
+      </button>
+    </div>
 
-        <!--5PM-->
-        <div id="hour-17" class="row time-block">
-          <div class="col-2 col-md-1 hour text-center py-3">5PM</div>
-          <textarea id="hour17text" class="col-8 col-md-10 description" rows="3">
+    <!--4PM-->
+    <div id="hour-16" class="row time-block">
+      <div class="col-2 col-md-1 hour text-center py-3">4PM</div>
+      <textarea id="hour16text" class="col-8 col-md-10 description" rows="3">
           </textarea>
-          <button
-            id="hour17Save"
-            class="btn saveBtn col-2 col-md-1"
-            aria-label="save"
-          >
-            <i class="fas fa-save" aria-hidden="true"></i>
-          </button>
-        </div>
-        
-    <!--Script Links--> 
-     
+      <button id="hour16Save" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <i class="fas fa-save" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <!--5PM-->
+    <div id="hour-17" class="row time-block">
+      <div class="col-2 col-md-1 hour text-center py-3">5PM</div>
+      <textarea id="hour17text" class="col-8 col-md-10 description" rows="3">
+          </textarea>
+      <button id="hour17Save" class="btn saveBtn col-2 col-md-1" aria-label="save">
+        <i class="fas fa-save" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <!--Script Links-->
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
 
     <script src="assets/script.js"></script>
-  </body>
+</body>
+
 </html>
