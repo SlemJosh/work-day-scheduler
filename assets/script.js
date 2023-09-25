@@ -24,8 +24,15 @@ $(".container-fluid").children("div").each(timeColor);
 
 function timeColor(){
   let currentHour = dayjs().format("H");
+  
+  // If the hour is in the past based on our current time...
+  for (i = 9; i <= 17; i++){
+    if (i < currentHour) {
+      $("#hour-" + i).toggleClass("past");
+    }
+   
 
-
+  }
 }
 
 
