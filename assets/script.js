@@ -7,32 +7,36 @@ $(function () {
 
   // Added the function saveTasks so that we can take what information is given and store it in the local storage.  Users can refresh or even leave the page and the info will stay there until cleared/we set a timer to auto delete it.
   // Formatting is just so that we can save it to the appropriate time slot.  As long as it's between our 9am and 5pm (17hour) we want to be able to save that data in addition to whatever they put into the text box.
-  function saveTasks(){
-    for (i = 9; i <= 17; i++){
-      localStorage.setItems("hour" + i, $("#hour" + i + "text").val());
+  function saveTasks() {
+    for (i = 9; i <= 17; i++) {
+      localStorage.setItem("hour" + i, $("#hour" + i + "text").val());
     }
+  }
+  
+  // Now that we have that information being saved, we need a way to display it, outside of just being stored on the developer tools. So we use a function to pull that information and display it to the user.
+    for (i = 9; i <= 17; i++) {
+    $("#hour" + i + "text").val(localStorage.getItem("hour" + i));
   }
 
 
 
 
+
+
+
+
+
+
+
   // We want to display the current date and time.  Our header has a class already tied to it, so we will just use that here in the function to pull the data from the users pc and display it on the screen.
-  // Initially I found documentation that went through and got me a big string to respresent todays date and current time. I then had to use some additional coding to get that string into information that could be read out on the page.
-  // After I went back and check the example, I found that it would be better to use something simpler to display just the time and date. No need for the all the information the other method was giving us.
-  let time = Date.now()
-  console.log(time);
+  // Used the dayjs() function.  And then we chose for it to be display in a format that will show us the abbreviation for the day, followed by the actual date in the format we provide.
+  // Then we just take that information and apply it to the class id currentDay given to us on the index page.
 
-  var date = Date(Date.now());
+  let today = dayjs().format("ddd, MM/DD/YYYY");
+  document.getElementById("currentDay").innerHTML = today;
 
-  let currentDate = date.toString();
-  console.log(currentDate);
-  document.getElementById("currentDay").innerHTML = currentDate;
-
-// https://www.freecodecamp.org/news/javascript-date-time-dayjs/#:~:text=const%20currentDate%20%3D%20dayjs()%3B,That's%20it!
-
-  //let today = dayjs().format("ddd, MM/DD/YYYY");
-  //document.getElementById("currentDay").innerHTML = today;
-
+  // reference for dayjs()
+  // https://www.freecodecamp.org/news/javascript-date-time-dayjs/#:~:text=const%20currentDate%20%3D%20dayjs()%3B,That's%20it!
 
 
   // TODO: Add a listener for click events on the save button. This code should
