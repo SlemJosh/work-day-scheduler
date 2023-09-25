@@ -19,6 +19,19 @@ $(function () {
   }
 
 
+  // Time to deal with the time coding. Our stylesheet already has it setup to display the colors for past, present, and future.  We just need to be able to tell the system how those hours relate to our current time.
+$(".container-fluid").children("div").each(timeColor);
+
+function timeColor(){
+  let currentHour = dayjs().format("H");
+
+
+}
+
+
+// TODO!!!
+// I'm noticing that as I put info into any box, any button click is saving that box to the localStorage. We want to come back to this and make sure we are only.  I'd prefer that my boxes are only working for the appropriate field. I will
+// Need to look into this before I finish.
 
 
 
