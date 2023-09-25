@@ -33,6 +33,10 @@ function timeColor(){
     if (i == currentHour) {
       $("#hour-" + i).toggleClass("present");
     }
+  // If the current hour is before the hours listed ...
+    if (i > currentHour) {
+      $("#hour-" + i).toggleClass("future");
+    }
 
   }
 }
