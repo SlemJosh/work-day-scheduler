@@ -17,6 +17,7 @@ $(function () {
   }
 
   // Time to deal with the time coding. Our stylesheet already has it setup to display the colors for past, present, and future.  We just need to be able to tell the system how those hours relate to our current time.
+  // We go into our container as specificed on the index.  And then for each time interval (children) and telling it to change the div class to our new values based on the time.
 $(".container-lg").children("div").each(timeColor);
 
 function timeColor(){
@@ -35,14 +36,13 @@ function timeColor(){
     if (i > currentHour) {
       $("#hour-" + i).toggleClass("future");
     }
-
   }
 }
   // We want to display the current date and time.  Our header has a class already tied to it, so we will just use that here in the function to pull the data from the users pc and display it on the screen.
   // Used the dayjs() function.  And then we chose for it to be display in a format that will show us the abbreviation for the day, followed by the actual date in the format we provide.
   // Then we just take that information and apply it to the class id currentDay given to us on the index page.
 
-  let today = dayjs().format("ddd, MM/DD/YYYY");
+  let today = dayjs().format("dddd, MM/DD/YYYY");  //https://day.js.org/docs/en/display/format
   document.getElementById("currentDay").innerHTML = today;
 
   // reference for dayjs()
